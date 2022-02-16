@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router';
 
-import PostsList from './pages/posts/PostsList.vue';
 import PostDetail from './pages/posts/PostDetail.vue';
+import PostsList from './pages/posts/PostsList.vue';
 import NotFound from './pages/NotFound.vue';
 
 const router = createRouter({
@@ -9,7 +9,7 @@ const router = createRouter({
   routes: [
     { path: '/', redirect: '/posts' },
     { path: '/posts', component: PostsList },
-    { path: '/posts/:id', component: PostDetail },
+    { path: '/posts/:id', component: PostDetail, props: true },
     { path: '/:notFound(.*)', component: NotFound },
   ],
 });

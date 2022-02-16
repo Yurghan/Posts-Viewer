@@ -2,7 +2,7 @@
   <li>
     <h3>{{ title }}</h3>
     <h5>{{ fullName }}</h5>
-    <h4>{{ body }}</h4>
+    <h4>{{ shortBody }}</h4>
 
     <div class="actions">
       <base-button mode="outline" link :to="postDetailsLink"
@@ -19,6 +19,10 @@ export default {
   computed: {
     postDetailsLink() {
       return this.$route.path + '/' + this.id; // /post/1
+    },
+
+    shortBody() {
+      return this.body.slice(0, 30) + '...';
     },
   },
 };
