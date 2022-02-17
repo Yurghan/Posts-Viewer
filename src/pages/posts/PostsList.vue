@@ -58,9 +58,17 @@ export default {
     },
   },
 
+  created() {
+    this.loadPosts();
+  },
+
   methods: {
     setFilters(updatedFilters) {
       this.activeFilters = updatedFilters;
+    },
+
+    loadPosts() {
+      this.$store.dispatch('posts/loadPosts');
     },
   },
 };
