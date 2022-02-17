@@ -1,4 +1,7 @@
 <template>
+  <base-dialog :show="!!error" title="An error occurred" @close="handleError">
+    <p>{{ error }}</p>
+  </base-dialog>
   <section>
     <post-filter @change-filter="setFilters"> </post-filter>
   </section>
@@ -36,6 +39,7 @@ export default {
   data() {
     return {
       isLoading: false,
+      error: null,
       activeFilters: {
         evenId: true,
         oddId: true,
@@ -73,8 +77,17 @@ export default {
 
     async loadPosts() {
       this.isLoading = true;
-      await this.$store.dispatch('posts/loadPosts');
+      try {
+        await this.$store.dispatch('posts/loadPosts');
+      } catch (error) {
+        this.error = error.message || 'Something went wrong!';
+      }
+
       this.isLoading = false;
+    },
+
+    handleError() {
+      this.error = null;
     },
   },
 };
