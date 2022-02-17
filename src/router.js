@@ -9,7 +9,7 @@ const router = createRouter({
   routes: [
     { path: '/', redirect: '/posts' },
     { path: '/posts', component: PostsList },
-    { path: '/posts/:id', component: PostDetail, props: true },
+    { path: `/posts/:id`, component: PostDetail, props: true },
     { path: '/:notFound(.*)', component: NotFound },
   ],
 });

@@ -2,7 +2,7 @@
   <section>
     <base-card>
       <h2>{{ title }}</h2>
-      <h3>{{ fullName }}</h3>
+      <h3>{{ userId }}</h3>
       <p>{{ body }}</p>
     </base-card>
   </section>
@@ -18,8 +18,8 @@ export default {
     };
   },
   computed: {
-    fullName() {
-      return this.selectedPost.fullName;
+    userId() {
+      return this.selectedPost.userId;
     },
     title() {
       return this.selectedPost.title;
@@ -30,9 +30,8 @@ export default {
   },
 
   created() {
-    console.log(this.id);
     this.selectedPost = this.$store.getters['posts/posts'].find(
-      (post) => post.id === this.id
+      (post) => +post.id === +this.id
     );
   },
 };

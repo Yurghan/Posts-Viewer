@@ -9,7 +9,7 @@
           v-for="post in filteredPosts"
           :key="post.id"
           :id="post.id"
-          :fullName="post.fullName"
+          :userId="post.userId"
           :title="post.title"
           :body="post.body"
         >
@@ -33,8 +33,8 @@ export default {
   data() {
     return {
       activeFilters: {
-        kowalski: true,
-        nowak: true,
+        evenId: true,
+        oddId: true,
       },
     };
   },
@@ -43,13 +43,10 @@ export default {
     filteredPosts() {
       const posts = this.$store.getters['posts/posts'];
       return posts.filter((post) => {
-        if (
-          this.activeFilters.kowalski &&
-          post.fullName.includes('Jan Kowalski')
-        ) {
+        if (this.activeFilters.evenId && !(post.id % 2)) {
           return true;
         }
-        if (this.activeFilters.nowak && post.fullName.includes('Jan Nowak')) {
+        if (this.activeFilters.oddId && post.id % 2) {
           return true;
         }
         return false;

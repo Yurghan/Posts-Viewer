@@ -2,12 +2,12 @@
   <base-card>
     <h2>Find a post</h2>
     <span class="filter-option">
-      <input type="checkbox" id="kowalski" checked @change="setFilter" />
-      <label for="kowalski">Kowalski</label>
+      <input type="checkbox" id="evenId" checked @change="setFilter" />
+      <label for="evenId">Even ID</label>
     </span>
     <span class="filter-option">
-      <input type="checkbox" id="nowak" checked @change="setFilter" />
-      <label for="nowak">Nowak</label>
+      <input type="checkbox" id="oddId" checked @change="setFilter" />
+      <label for="oddId">Odd ID</label>
     </span>
   </base-card>
 </template>
@@ -18,8 +18,8 @@ export default {
   data() {
     return {
       filters: {
-        kowalski: true,
-        nowak: true,
+        evenId: true,
+        oddId: true,
       },
     };
   },

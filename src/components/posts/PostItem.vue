@@ -1,7 +1,8 @@
 <template>
   <li>
     <h3>{{ title }}</h3>
-    <h5>{{ fullName }}</h5>
+    <h6>Post no. {{ id }}</h6>
+    <h5>Author: {{ userId }}</h5>
     <h4>{{ shortBody }}</h4>
 
     <div class="actions">
@@ -15,7 +16,7 @@
 
 <script>
 export default {
-  props: ['id', 'fullName', 'title', 'body'],
+  props: ['id', 'userId', 'title', 'body'],
   computed: {
     postDetailsLink() {
       return this.$route.path + '/' + this.id; // /post/1
