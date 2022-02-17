@@ -4,7 +4,10 @@
   </section>
   <section>
     <base-card>
-      <ul v-if="hasPosts">
+      <div v-if="isLoading">
+        <base-spinner> </base-spinner>
+      </div>
+      <ul v-else-if="hasPosts">
         <post-item
           v-for="post in filteredPosts"
           :key="post.id"
@@ -32,6 +35,7 @@ export default {
 
   data() {
     return {
+      isLoading: false,
       activeFilters: {
         evenId: true,
         oddId: true,
@@ -54,7 +58,7 @@ export default {
     },
 
     hasPosts() {
-      return this.$store.getters['posts/hasPosts'];
+      return !this.isLoading && this.$store.getters['posts/hasPosts'];
     },
   },
 
@@ -67,8 +71,10 @@ export default {
       this.activeFilters = updatedFilters;
     },
 
-    loadPosts() {
-      this.$store.dispatch('posts/loadPosts');
+    async loadPosts() {
+      this.isLoading = true;
+      await this.$store.dispatch('posts/loadPosts');
+      this.isLoading = false;
     },
   },
 };
