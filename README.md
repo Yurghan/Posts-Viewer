@@ -2,7 +2,7 @@
 
 ## Preview
 
-https://posts-viewer.netlify.app/posts
+https://posts-viewer.netlify.app
 
 ## How to use
 
