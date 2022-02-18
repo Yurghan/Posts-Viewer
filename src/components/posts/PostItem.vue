@@ -27,7 +27,16 @@ export default {
   methods: {
     // ❗ TODO ❗ - implementacja usuwania posta
     deletePost() {
-      console.log('post was deleted');
+      console.log(
+        `https://jsonplaceholder.typicode.com${this.$route.path}/${this.id}`
+      );
+      // fetch(
+      //   `https://jsonplaceholder.typicode.com${this.$route.path}/${this.id}`,
+      //   {
+      //     method: 'DELETE',
+      //   }
+      // );
+      // wyswtlenie postow bez tego usunietego
     },
   },
 };

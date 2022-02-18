@@ -2,8 +2,8 @@
   <section>
     <base-card>
       <router-link to="/posts">Go back </router-link>
-      <h2>{{ title }}</h2>
-      <h3>{{ userId }}</h3>
+      <h1>{{ title }}</h1>
+      <h4>Author{{ userId }}</h4>
       <p>{{ body }}</p>
     </base-card>
   </section>
