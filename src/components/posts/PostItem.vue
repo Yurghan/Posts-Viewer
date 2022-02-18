@@ -6,9 +6,7 @@
     <h4>{{ shortBody }}</h4>
 
     <div class="actions">
-      <base-button mode="outline" link :to="postDetailsLink"
-        >Delete</base-button
-      >
+      <base-button mode="outline">Delete</base-button>
       <base-button link :to="postDetailsLink">Read more</base-button>
     </div>
   </li>

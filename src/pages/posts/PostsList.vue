@@ -7,6 +7,35 @@
   </section>
   <section>
     <base-card>
+      <PostsPagination
+        :totalItems="filteredPosts.length"
+        :items="
+          (filteredPosts &&
+            filteredPosts.map((c) => {
+              return {
+                id: c.id,
+                title: c.title,
+                userId: c.userId,
+                body: c.body,
+              };
+            })) ||
+          []
+        "
+      >
+        <template #data="{ paginatedItems }">
+          <post-item
+            v-for="item in paginatedItems"
+            :key="item.id"
+            :id="item.id"
+            :userId="item.userId"
+            :title="item.title"
+            :body="item.body"
+          >
+          </post-item>
+        </template>
+      </PostsPagination>
+
+      <!--
       <div v-if="isLoading">
         <base-spinner> </base-spinner>
       </div>
@@ -22,6 +51,7 @@
         </post-item>
       </ul>
       <h3 v-else>No posts found.</h3>
+      -->
     </base-card>
   </section>
 </template>
@@ -29,9 +59,11 @@
 <script>
 import PostItem from '../../components/posts/PostItem.vue';
 import PostFilter from '../../components/posts/PostFilter.vue';
+import PostsPagination from '../../components/posts/PostsPagination.vue';
 
 export default {
   components: {
+    PostsPagination,
     PostItem,
     PostFilter,
   },
