@@ -36,8 +36,8 @@ div {
   justify-content: flex-end; }
 
 .pagination-button {
-  padding: 8px;
-  margin: 2px;
+  padding: 0.8rem;
+  margin: 0.2rem;
   border-radius: 3px;
   font-size: 1em;
   cursor: pointer; }
@@ -52,7 +52,7 @@ div {
 
 .pagination-row {
   text-align: center;
-  padding: 5px 0; }
+  padding: 0.5rem 0; }
 
 .card {
   border-radius: 12px;
@@ -151,11 +151,6 @@ menu {
   opacity: 1;
   transform: scale(1); }
 
-@media (min-width: 768px) {
-  dialog {
-    left: calc(50% - 20rem);
-    width: 40rem; } }
-
 .spinner {
   display: flex;
   justify-content: center;
@@ -252,7 +247,8 @@ menu {
   box-sizing: border-box; }
 
 html {
-  font-family: 'Roboto', sans-serif; }
+  font-family: 'Roboto', sans-serif;
+  font-size: 10px; }
 
 body {
   margin: 0; }
@@ -275,3 +271,16 @@ body {
 .route.leave-from {
   opacity: 1;
   transform: translateY(0); }
+
+@media (min-width: 768px) {
+  dialog {
+    left: calc(50% - 20rem);
+    width: 40rem; } }
+
+@media (min-width: 768px) {
+  html {
+    font-size: 18px; } }
+
+@media (max-width: 450px) {
+  html {
+    font-size: 7px; } }

@@ -1,3 +1,4 @@
+// Parts of site
 @import './parts/components/posts/PostsFilter',
   './parts/components/posts/PostItem',
   './parts/components/posts/PostsPagination';
@@ -9,3 +10,8 @@
   './parts/pages/NotFound';
 
 @import './parts/App';
+
+// RWD
+@import './RWD/components/RWD-BaseDialog';
+
+@import './RWD/RWD-App';

@@ -1,9 +1,8 @@
 <template>
   <div class="singlePost">
-    <h3>{{ title }}</h3>
-    <h6>Post no. {{ id }}</h6>
-    <h5>Author: {{ userId }}</h5>
-    <h4>{{ shortBody }}</h4>
+    <h3>Title: {{ title }} - Post no. {{ id }}</h3>
+    <h5>Posted by: Author{{ userId }}</h5>
+    <h4>Content: {{ shortBody }}</h4>
 
     <div class="actions">
       <base-button mode="outline" @click="deletePost">Delete</base-button>
