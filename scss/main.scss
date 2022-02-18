@@ -1,0 +1,11 @@
+@import './parts/components/posts/PostsFilter',
+  './parts/components/posts/PostItem',
+  './parts/components/posts/PostsPagination';
+
+@import './parts/components/ui/BaseCard', './parts/components/ui/BaseButton',
+  './parts/components/ui/BaseDialog', './parts/components/ui/BaseSpinner';
+
+@import './parts/pages/posts/PostDetail', './parts/pages/posts/PostsList',
+  './parts/pages/NotFound';
+
+@import './parts/App';

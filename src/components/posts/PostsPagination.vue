@@ -98,26 +98,3 @@ export default {
   },
 };
 </script>
-
-<style scoped>
-.pagination-button {
-  padding: 8px;
-  margin: 2px;
-  border-radius: 3px;
-  font-size: 1em;
-  cursor: pointer;
-}
-.pagination-button.active {
-  background-color: #ccc;
-  cursor: auto;
-}
-
-.pagination-button:disabled {
-  cursor: auto;
-}
-
-.pagination-row {
-  text-align: center;
-  padding: 5px 0;
-}
-</style>
