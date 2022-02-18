@@ -1,59 +1,43 @@
 <template>
-  <base-dialog :show="!!error" title="An error occurred" @close="handleError">
-    <p>{{ error }}</p>
-  </base-dialog>
-  <section>
-    <post-filter @change-filter="setFilters"> </post-filter>
-  </section>
-  <section>
-    <base-card>
-      <PostsPagination
-        :totalItems="filteredPosts.length"
-        :items="
-          (filteredPosts &&
-            filteredPosts.map((c) => {
-              return {
-                id: c.id,
-                title: c.title,
-                userId: c.userId,
-                body: c.body,
-              };
-            })) ||
-          []
-        "
-      >
-        <template #data="{ paginatedItems }">
-          <post-item
-            v-for="item in paginatedItems"
-            :key="item.id"
-            :id="item.id"
-            :userId="item.userId"
-            :title="item.title"
-            :body="item.body"
-          >
-          </post-item>
-        </template>
-      </PostsPagination>
-
-      <!--
-      <div v-if="isLoading">
-        <base-spinner> </base-spinner>
-      </div>
-      <ul v-else-if="hasPosts">
-        <post-item
-          v-for="post in filteredPosts"
-          :key="post.id"
-          :id="post.id"
-          :userId="post.userId"
-          :title="post.title"
-          :body="post.body"
+  <div>
+    <base-dialog :show="!!error" title="An error occurred" @close="handleError">
+      <p>{{ error }}</p>
+    </base-dialog>
+    <section>
+      <post-filter @change-filter="setFilters"> </post-filter>
+    </section>
+    <section>
+      <base-card>
+        <PostsPagination
+          :totalItems="filteredPosts.length"
+          :items="
+            (filteredPosts &&
+              filteredPosts.map((c) => {
+                return {
+                  id: c.id,
+                  title: c.title,
+                  userId: c.userId,
+                  body: c.body,
+                };
+              })) ||
+            []
+          "
         >
-        </post-item>
-      </ul>
-      <h3 v-else>No posts found.</h3>
-      -->
-    </base-card>
-  </section>
+          <template #data="{ paginatedItems }">
+            <post-item
+              v-for="item in paginatedItems"
+              :key="item.id"
+              :id="item.id"
+              :userId="item.userId"
+              :title="item.title"
+              :body="item.body"
+            >
+            </post-item>
+          </template>
+        </PostsPagination>
+      </base-card>
+    </section>
+  </div>
 </template>
 
 <script>

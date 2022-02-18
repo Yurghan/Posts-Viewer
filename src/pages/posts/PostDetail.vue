@@ -1,6 +1,7 @@
 <template>
   <section>
     <base-card>
+      <router-link to="/posts">Go back </router-link>
       <h2>{{ title }}</h2>
       <h3>{{ userId }}</h3>
       <p>{{ body }}</p>
